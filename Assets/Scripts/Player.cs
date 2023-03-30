@@ -30,7 +30,6 @@ public class Player : MonoBehaviour
         // 3, 위치 제어
         Vector2 nextVec = inputVec * speed * Time.fixedDeltaTime; 
         rigid.MovePosition(rigid.position + nextVec);
-        Debug.Log(nextVec);
     }
 
     void Update()
