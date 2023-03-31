@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float damage;
+    public double damage;
     public int per;
 
-    public void Init(float damage, int per)
+    public void Init(double damage, int per)
     {
         this.damage = damage;
         this.per = per;

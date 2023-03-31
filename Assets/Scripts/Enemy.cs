@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float speed;
-    public float health;
+    public double health;
     public float maxHealth;
     public RuntimeAnimatorController[] animCon;
     public Rigidbody2D target;
