@@ -70,7 +70,7 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Bullet")) // Bullet과 충돌하지 않았을 때
+        if (!collision.CompareTag("Bullet") || !isLive) // Bullet과 충돌하지 않거나, 죽어있을 때는 걸러짐
             return;
 
         health -= collision.GetComponent<Bullet>().damage;
@@ -88,6 +88,8 @@ public class Enemy : MonoBehaviour
             rigid.simulated = false; // 리지드바디의 물리적 비활성화는 .simulated = false;
             spriter.sortingOrder = 1;
             anim.SetBool("Dead", true);
+            GameManager.instance.kill++;
+            GameManager.instance.GetExp();
         }
     }
 
