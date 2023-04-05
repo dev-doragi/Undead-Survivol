@@ -1,4 +1,4 @@
-ï»¿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +6,7 @@ public class Scanner : MonoBehaviour
 {
     public float scanRange;
     public LayerMask targetLayer;
-    public LaycastHit2D[] targets;
+    public RaycastHit2D[] targets;
     public Transform nearestTarget;
 
     void FixedUpdate()
@@ -22,14 +22,14 @@ public class Scanner : MonoBehaviour
 
         foreach (RaycastHit2D target in targets)
         {
-            Vector3 myPos = transform.position; // í”Œë ˆì´ì–´ ìœ„ì¹˜
-            Vector3 targetPos = targets.transform.position; // íƒ€ê²Ÿ ë°°ì—´ì† ê° íƒ€ê²Ÿì˜ ìœ„ì¹˜
+            Vector3 myPos = transform.position; // ÇÃ·¹ÀÌ¾î À§Ä¡
+            Vector3 targetPos = target.transform.position; // Å¸°Ù ¹è¿­¼Ó °¢ Å¸°ÙÀÇ À§Ä¡
             float curDiff = Vector3.Distance(myPos, targetPos);
 
             if (curDiff < diff)
             {
-                diff = curDiff; // í˜„ì¬ ê±°ë¦¬ë¥¼ ì—…ë°ì´íŠ¸ í•˜ê³ ,
-                result = target.transform; // íƒ€ê²Ÿ ì§€ì •
+                diff = curDiff; // ÇöÀç °Å¸®¸¦ ¾÷µ¥ÀÌÆ® ÇÏ°í,
+                result = target.transform; // Å¸°Ù ÁöÁ¤
             }
         }
 

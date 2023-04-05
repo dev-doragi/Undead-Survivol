@@ -13,18 +13,23 @@ public class Enemy : MonoBehaviour
     bool isLive;
 
     Rigidbody2D rigid;
+    Collider2D coll;
     Animator anim;
     SpriteRenderer spriter;
+    WaitForFixedUpdate wait;
+
     void Awake() // 초기화
     {
         rigid = GetComponent<Rigidbody2D>();
+        coll = GetComponent<Collider2D>();
         anim = GetComponent<Animator>();
         spriter = GetComponent<SpriteRenderer>();
+        wait = new WaitForFixedUpdate();
     }
 
     void FixedUpdate()
     {
-        if (!isLive)
+        if (!isLive || anim.GetCurrentAnimatorStateInfo(0).IsName("Hit"))
             return;
 
         Vector2 dirVec = target.position - rigid.position;
@@ -46,6 +51,12 @@ public class Enemy : MonoBehaviour
         target = GameManager.instance.player.GetComponent<Rigidbody2D>(); // 타겟 지정, 게임매니저에서 따옴
         isLive = true;
         health = maxHealth;
+
+        isLive = true;
+        coll.enabled = true; // 컴포넌트의 비활성화는 .enaled = false;
+        rigid.simulated = true; // 리지드바디의 물리적 비활성화는 .simulated = false;
+        spriter.sortingOrder = 2;
+        anim.SetBool("Dead", false);
     }
 
     // spawner에서 초기 속성(Spawn Data)을 적용하는 함수
@@ -63,17 +74,31 @@ public class Enemy : MonoBehaviour
             return;
 
         health -= collision.GetComponent<Bullet>().damage;
+        StartCoroutine(KnockBack());
+        // StartCoroutine("KnockBack");
 
         if (health > 0)
         {
-
+            anim.SetTrigger("Hit");
         }
-        else
+        else // 죽었을 때
         {
-            Dead();
+            isLive = false;
+            coll.enabled = false; // 컴포넌트의 비활성화는 .enaled = false;
+            rigid.simulated = false; // 리지드바디의 물리적 비활성화는 .simulated = false;
+            spriter.sortingOrder = 1;
+            anim.SetBool("Dead", true);
         }
     }
 
+    IEnumerator KnockBack()
+    {
+        yield return wait; // 다음 하나의 물리 프레임 딜레이
+        Vector3 playerPos = GameManager.instance.player.transform.position;
+        Vector3 dirVec = transform.position - playerPos;
+        rigid.AddForce(dirVec.normalized * 3, ForceMode2D.Impulse);
+    }
+    
     void Dead()
     {
         gameObject.SetActive(false);
