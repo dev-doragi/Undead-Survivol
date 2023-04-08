@@ -15,25 +15,20 @@ public class Weapon : MonoBehaviour
 
     void Awake()
     {
-        player = GetComponentInParent<Player>();
+        player = GameManager.instance.player;
     }
 
-    void Start()
-    {
-        Init();
-    }
     void Update()
     {
         switch (id)
         {
-            case 0:
+            case 0: // 회전 무기
                 transform.Rotate(Vector3.back * speed * Time.deltaTime);
 
                 break;
-            default:
+            default: // 기본 총탄 무기
                 timer += Time.deltaTime;
-
-                if(timer > speed) // 타이머가 다 돌면 총알 발사
+                if (timer > speed) // 타이머가 다 돌면 총알 발사
                 {
                     timer = 0f;
                     Fire();
@@ -49,14 +44,36 @@ public class Weapon : MonoBehaviour
     public void LevelUp(double damage, int count)
     {
         this.damage = damage;
-        this.count += count; // 무기 개수
+        this.count += count; // 관통 수
 
         if (id == 0)
             Batch();
+
+        player.BroadcastMessage("ApplyGear");
     }
 
-    public void Init()
+    public void Init(ItemData data)
     {
+        // Basic Set
+        name = "Weapon " + data.itemId;
+        transform.parent = player.transform;
+        transform.localPosition = Vector3.zero; // 플레이어 위치 기준이므로 localPosition
+
+        // Property Set
+        id = data.itemId;
+        damage = data.baseDamage;
+        count = data.baseCount;
+
+        for (int i=0; i < GameManager.instance.pool.prefabs.Length; i++)
+        { 
+            // 
+            if (data.projectile == GameManager.instance.pool.prefabs[i])
+            {
+                prefabId = i;
+                break;
+            }
+        }
+
         switch (id)
         {
             case 0:
@@ -68,6 +85,8 @@ public class Weapon : MonoBehaviour
                 speed = 0.4f; // 발사 속도
                 break;
         }
+
+        player.BroadcastMessage("ApplyGear");
     }
 
     void Batch() // 회전 무기를 count만큼 배치해주는 함수

@@ -31,6 +31,7 @@ public class Scanner : MonoBehaviour
                 diff = curDiff; // 현재 거리를 업데이트 하고,
                 result = target.transform; // 타겟 지정
             }
+            result = target.transform;
         }
 
         return result;

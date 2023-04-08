@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    public static GameManager instance; // 전역으로 GameManager클래스형의 instance 변수 선언
     [Header("# Game Control")]
     public float gameTime;
     public float maxGameTime = 2 * 10f;
