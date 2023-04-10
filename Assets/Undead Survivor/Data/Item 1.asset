@@ -27,3 +27,4 @@ MonoBehaviour:
   - 1.9
   counts: 0100000001000000020000000300000004000000
   projectile: {fileID: 2430695309519262231, guid: c333a540b2283cc48b944d48d63e5a9b, type: 3}
+  hand: {fileID: -353751291, guid: 0d5e657ee5a074e4baa53d5b248a01d2, type: 3}

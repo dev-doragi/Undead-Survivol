@@ -23,6 +23,8 @@ public class Weapon : MonoBehaviour
         switch (id)
         {
             case 0: // 회전 무기
+            case 5:
+            case 6:
                 transform.Rotate(Vector3.back * speed * Time.deltaTime);
 
                 break;
@@ -46,10 +48,10 @@ public class Weapon : MonoBehaviour
         this.damage = damage;
         this.count += count; // 관통 수
 
-        if (id == 0)
+        if (id == 0 || id == 5 || id == 6)
             Batch();
 
-        player.BroadcastMessage("ApplyGear");
+        player.BroadcastMessage("ApplyGear", SendMessageOptions.DontRequireReceiver);
     }
 
     public void Init(ItemData data)
@@ -77,7 +79,13 @@ public class Weapon : MonoBehaviour
         switch (id)
         {
             case 0:
+            case 5:
                 speed = 150;
+                Batch();
+
+                break;
+            case 6:
+                speed = 300;
                 Batch();
 
                 break;
@@ -86,7 +94,15 @@ public class Weapon : MonoBehaviour
                 break;
         }
 
-        player.BroadcastMessage("ApplyGear");
+        // player.hands[0]는 Player.cs를 참고하여 자식 컴포넌츠 중 첫번째임
+        // 따라서 Hand hand = player.hands[(int)data.itemType]; 는 
+        // data.itemType이 근거리면 0, 원거리면 1 이니까,
+        // player.hands[0]이 근거리, 1은 원거리가 되도록 Player 컴포넌츠의 자식의 순서를 정해야함.
+        Hand hand = player.hands[(int)data.itemType];
+        hand.spriter.sprite = data.hand;
+        hand.gameObject.SetActive(true);
+
+        player.BroadcastMessage("ApplyGear", SendMessageOptions.DontRequireReceiver);
     }
 
     void Batch() // 회전 무기를 count만큼 배치해주는 함수

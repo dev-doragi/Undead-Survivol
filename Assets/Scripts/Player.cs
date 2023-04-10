@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     public Vector2 inputVec;
     public float speed;
     public Scanner scanner; // Scanner라는 스크립트를 컴포넌트로 사용
+    public Hand[] hands;
+
     Rigidbody2D rigid;
     SpriteRenderer spriter;
     Animator anim;
@@ -18,6 +20,7 @@ public class Player : MonoBehaviour
         spriter = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         scanner = GetComponent<Scanner>();
+        hands = GetComponentsInChildren<Hand>(true);
     }
 
     void FixedUpdate() // 물리 연산 프레임마다 호출되는 생명주기 함수
