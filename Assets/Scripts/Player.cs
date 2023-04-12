@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
 
     void FixedUpdate() // 물리 연산 프레임마다 호출되는 생명주기 함수
     {
+        if (!GameManager.instance.isLive)
+            return;
         //// 1. 힘
         //rigid.AddForce(inputVec);
 
@@ -38,6 +40,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (!GameManager.instance.isLive)
+            return;
         inputVec.x = Input.GetAxisRaw("Horizontal");
         inputVec.y = Input.GetAxisRaw("Vertical");
     }
@@ -49,6 +53,8 @@ public class Player : MonoBehaviour
 
     void LateUpdate()
     {
+        if (!GameManager.instance.isLive)
+            return;
         anim.SetFloat("Speed", inputVec.magnitude);
 
         if (inputVec.x != 0)

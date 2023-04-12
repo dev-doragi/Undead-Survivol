@@ -6,7 +6,6 @@ public class Hand : MonoBehaviour
 {
     public bool isLeft;
     public SpriteRenderer spriter; // 왜 퍼블릭일까?
-    Player players;
 
     SpriteRenderer player;
 
@@ -18,7 +17,6 @@ public class Hand : MonoBehaviour
     void Awake()
     {
         player = GetComponentsInParent<SpriteRenderer>()[1];
-        players = GameManager.instance.player;
     }
 
     void LateUpdate()
@@ -31,34 +29,11 @@ public class Hand : MonoBehaviour
             spriter.flipY = isReverse;
             spriter.sortingOrder = isReverse ? 4 : 6;
         }
-        else if (players.scanner.nearestTarget) // 여기서부터 문제
-        {
-            if (isReverse)
-            {
-                transform.localPosition = rightPos;
-                spriter.flipX = true;
-                Vector3 targetPos = players.scanner.nearestTarget.position;
-                Vector3 dir = targetPos - transform.position;
-                transform.localRotation = Quaternion.FromToRotation(Vector3.right, dir);
-            }
-            else
-            {
-                transform.localPosition = rightPosReverse;
-                spriter.flipX = false;
-                Vector3 targetPos = players.scanner.nearestTarget.position;
-                Vector3 dir = targetPos - transform.position;
-                transform.localRotation = Quaternion.FromToRotation(Vector3.right, dir);
-            }
-
-            bool isRotA = transform.localRotation.eulerAngles.z > 90 && transform.localRotation.eulerAngles.z < 270;
-            bool isRotB = transform.localRotation.eulerAngles.z > -90 && transform.localRotation.eulerAngles.z < -270;
-            spriter.flipY = isRotA || isRotB;
-        }
         else // 원거리 무기
         {
             transform.localPosition = isReverse ? rightPosReverse : rightPos;
             spriter.flipX = isReverse;
-            spriter.sortingOrder = isReverse ? 6 : 6;
+            spriter.sortingOrder = isReverse ? 6 : 4;
         }
     }
 }

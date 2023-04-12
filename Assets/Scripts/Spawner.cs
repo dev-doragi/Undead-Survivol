@@ -16,6 +16,9 @@ public class Spawner : MonoBehaviour
     }
     void Update()
     {
+        if (!GameManager.instance.isLive)
+            return;
+
         timer += Time.deltaTime;
         // 시간에 따라 레벨 증가
         level = Mathf.Min(Mathf.FloorToInt(GameManager.instance.gameTime / 10f), spawnData.Length - 1);

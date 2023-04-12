@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance; // 전역으로 GameManager클래스형의 instance 변수 선언
     [Header("# Game Control")]
+    public bool isLive; // 시간 정지 여부를 알려주는 bool 값
     public float gameTime;
     public float maxGameTime = 2 * 10f;
     [Header("# Player Info")]
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
     [Header("# Game Object")]
     public PoolManager pool;
     public Player player;
+    public LevelUp UILevelUP;
 
     void Awake()
     {
@@ -27,10 +29,16 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         health = maxHealth;
+
+        // 임시 스크립트
+        UILevelUP.Select(0); // 기본 무기 삽 제공
     }
 
     void Update()
     {
+        if (!isLive)
+            return;
+
         gameTime += Time.deltaTime;
 
         if (gameTime > maxGameTime)
@@ -43,11 +51,24 @@ public class GameManager : MonoBehaviour
     {
         exp++;
 
-        if(exp == nextExp[level])
+        if(exp == nextExp[Mathf.Min(level, nextExp.Length-1)])
+        // 레벨 업 로직, next exp는 최대 10개가 끝이기 때문에, 10레벨 부터는 레벨업을 해도 10레벨
         {
             level++;
             exp = 0;
-
+            UILevelUP.Show();
         }
+    }
+
+    public void Stop()
+    {
+        isLive = false;
+        Time.timeScale = 0; // 유니티 내 시간 정지
+
+    }
+    public void Resume()
+    {
+        isLive = true;
+        Time.timeScale = 1; // 유니티 내 시간 지속
     }
 }

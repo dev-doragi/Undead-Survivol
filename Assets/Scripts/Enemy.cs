@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!isLive || anim.GetCurrentAnimatorStateInfo(0).IsName("Hit"))
+        if (!GameManager.instance.isLive || !isLive || anim.GetCurrentAnimatorStateInfo(0).IsName("Hit"))
             return;
 
         Vector2 dirVec = target.position - rigid.position;
@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
 
     void LateUpdate()
     {
-        if (!isLive)
+        if (!GameManager.instance.isLive || !isLive)
             return;
 
         spriter.flipX = target.position.x < rigid.position.x;
