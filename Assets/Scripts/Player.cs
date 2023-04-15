@@ -62,4 +62,24 @@ public class Player : MonoBehaviour
             spriter.flipX = inputVec.x < 0;
         }
     }
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (!GameManager.instance.isLive)
+            return;
+
+        GameManager.instance.health -= Time.deltaTime * 10;
+
+        if (GameManager.instance.health < 0) // 체력이 모두 닳으면
+        {
+            for (int i=3; i< transform.childCount; i++)
+            {
+                transform.GetChild(i).gameObject.SetActive(false);
+                // Player 컴포넌트의 Area부터 자식 오브젝트들 비활성화
+            }
+
+            anim.SetTrigger("Dead");
+            GameManager.instance.GameOver();
+        }
+    }
 }
