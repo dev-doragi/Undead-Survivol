@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public float speed;
     public Scanner scanner; // Scanner라는 스크립트를 컴포넌트로 사용
     public Hand[] hands;
+    public RuntimeAnimatorController[] animCon;
 
     Rigidbody2D rigid;
     SpriteRenderer spriter;
@@ -21,6 +22,12 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         scanner = GetComponent<Scanner>();
         hands = GetComponentsInChildren<Hand>(true);
+    }
+
+    void OnEnable()
+    {
+        speed *= Character.Speed; // Speed.cs에서 속성을 가져옴
+        anim.runtimeAnimatorController = animCon[GameManager.instance.playerID];
     }
 
     void FixedUpdate() // 물리 연산 프레임마다 호출되는 생명주기 함수

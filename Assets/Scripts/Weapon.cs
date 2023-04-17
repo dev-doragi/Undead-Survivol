@@ -40,18 +40,14 @@ public class Weapon : MonoBehaviour
                 }
                 break;
         }
-
-        //test
-        if (Input.GetButtonDown("Jump"))
-            LevelUp(10f, 1);
     }
 
     public void LevelUp(double damage, int count)
     {
-        this.damage = damage;
+        this.damage = damage * Character.Damage;
         this.count += count; // 관통 수
 
-        if (id == 0 || id == 5 || id == 6)
+        if (id == 0 || id == 5 || id == 6 || id == 7)
             Batch();
 
         player.BroadcastMessage("ApplyGear", SendMessageOptions.DontRequireReceiver);
@@ -66,8 +62,8 @@ public class Weapon : MonoBehaviour
 
         // Property Set
         id = data.itemId;
-        damage = data.baseDamage;
-        count = data.baseCount;
+        damage = data.baseDamage * Character.Damage;
+        count = data.baseCount + Character.Count;
 
         for (int i=0; i < GameManager.instance.pool.prefabs.Length; i++)
         { 
@@ -83,17 +79,18 @@ public class Weapon : MonoBehaviour
         {
             case 0:
             case 5:
-                speed = 150;
+            case 7:
+                speed = 150 * Character.WeaponSpeed;
                 Batch();
-
                 break;
             case 6:
-                speed = 300;
+
+                speed = 300 * Character.WeaponSpeed;
                 Batch();
 
                 break;
             default:
-                speed = 0.4f; // 발사 속도
+                speed = 0.4f * Character.WeaponRate; // 발사 속도
                 break;
         }
 
