@@ -17,15 +17,15 @@ MonoBehaviour:
   itemName: Irene's Rapier
   itemDesc: "Just Shovel.\n\uB370\uBBF8\uC9C0 {0}% \uC99D\uAC00\n\uD68C\uC804\uCCB4
     {1}\uAC1C \uCD94\uAC00"
-  itemIcon: {fileID: 1016313520, guid: 34b0d460611d2554db8e543e12c95455, type: 3}
-  baseDamage: 4.5
+  itemIcon: {fileID: 316701098, guid: acf86c51d3ba72e4c8c957aac3fcb932, type: 3}
+  baseDamage: 1.5
   baseCount: 3
   damages:
+  - 0.25
   - 0.5
+  - 0.75
   - 1
-  - 1.5
-  - 2
-  - 2.5
+  - 1.25
   counts: 0100000001000000010000000100000001000000
-  projectile: {fileID: 7394169248969950908, guid: 4cf05e021acb2914ebe869ab5b60b928, type: 3}
-  hand: {fileID: 332268128, guid: 34b0d460611d2554db8e543e12c95455, type: 3}
+  projectile: {fileID: 7394169248969950908, guid: 2261b5b5e90ac394a9a45620c2255746, type: 3}
+  hand: {fileID: 1355018918, guid: acf86c51d3ba72e4c8c957aac3fcb932, type: 3}

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0cba82afd45209748a54505138d3abc4
+guid: acf86c51d3ba72e4c8c957aac3fcb932
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Irene 1_0
+      name: Irene_hand_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 63
-        width: 18
-        height: 20
+        y: 44
+        width: 19
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12b4a7c9ca61f574d96f4cda3e85172c
-      internalID: 609552819
+      spriteID: a8b011d1bcfeb49419bd85e2273cee13
+      internalID: 1355018918
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Irene 1_1
+      name: Spectre_sawblade
       rect:
         serializedVersion: 2
-        x: 19
-        y: 63
-        width: 18
-        height: 20
+        x: 21
+        y: 34
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bf525bdaa4ee3946958b6f252a51aa5
-      internalID: -1922685926
+      spriteID: 60eab43df19855747ba21f9f4b9be582
+      internalID: -1520810090
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Irene 1_2
+      name: Irene_Icon_0
       rect:
         serializedVersion: 2
-        x: 38
-        y: 63
+        x: 37
+        y: 32
         width: 18
-        height: 20
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27fd831ef4c2eb14882cc97c0b3ed18c
-      internalID: 259517701
+      spriteID: efb26fd2baf28ca439a5694e812ebccd
+      internalID: 316701098
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Irene 1_3
+      name: Irene_hand_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 42
-        width: 18
-        height: 20
+        x: 2
+        y: 34
+        width: 15
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,62 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce7fb2a46c3d2554cb634d3b73ef19e5
-      internalID: -126558015
+      spriteID: 1c9881bb9d6910543887c23b4496eab8
+      internalID: -1462648673
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Irene 1_4
-      rect:
-        serializedVersion: 2
-        x: 19
-        y: 42
-        width: 18
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c2ad53560050cdf4d974ae2475431bd6
-      internalID: -1659460726
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Irene 1_5
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 42
-        width: 18
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1f09a79d29957c1478bbd598cf8ee533
-      internalID: 406501096
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Irene 1_6
+      name: Irene_rapier
       rect:
         serializedVersion: 2
         x: 0
-        y: 21
-        width: 18
-        height: 20
+        y: 11
+        width: 7
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,20 +215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49d19d413c3af5f4da688a9b8bbf08f5
-      internalID: -2135712634
+      spriteID: b3174c31797b95e4482412348c69b6d9
+      internalID: 682511124
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Irene 1_7
+      name: Spectre_Icon_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 21
+        x: 18
+        y: 12
         width: 18
-        height: 20
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,20 +236,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0dd4b70a8c89766479a7dc6bc35a7c40
-      internalID: 1778988703
+      spriteID: d650d9fc538918b499100867e0f58538
+      internalID: 2136279583
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Irene 1_8
+      name: Irene_Icon_1
       rect:
         serializedVersion: 2
-        x: 38
-        y: 21
+        x: 37
+        y: 12
         width: 18
-        height: 20
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -299,20 +257,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 511dccc12ecbd6b4a84af9893676a4b6
-      internalID: -1932832038
+      spriteID: d3744e14c139d4942a8c53e9dd7ecb1d
+      internalID: 1323737050
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Irene 1_9
+      name: Spectre_hand
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 18
-        height: 20
+        width: 35
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -320,50 +278,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40ddb099aac9b904da04558d470f501a
-      internalID: 1483515227
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Irene 1_10
-      rect:
-        serializedVersion: 2
-        x: 19
-        y: 0
-        width: 18
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ddb26c0f8eae5c443b0937d83de3ac8d
-      internalID: 122685829
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Irene 1_11
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 0
-        width: 18
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f8a16a1a656469c4e91f9f1ff8ba833e
-      internalID: 34991436
+      spriteID: f72d10f1ad800ab44bdaba5f46aab113
+      internalID: 183785801
       vertices: []
       indices: 
       edges: []
@@ -379,18 +295,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Irene 1_0: 609552819
-      Irene 1_1: -1922685926
-      Irene 1_10: 122685829
-      Irene 1_11: 34991436
-      Irene 1_2: 259517701
-      Irene 1_3: -126558015
-      Irene 1_4: -1659460726
-      Irene 1_5: 406501096
-      Irene 1_6: -2135712634
-      Irene 1_7: 1778988703
-      Irene 1_8: -1932832038
-      Irene 1_9: 1483515227
+      Irene_Icon_0: 316701098
+      Irene_Icon_1: 1323737050
+      Irene_hand_0: 1355018918
+      Irene_hand_1: -1462648673
+      Irene_rapier: 682511124
+      Spectre_Icon_0: 2136279583
+      Spectre_hand: 183785801
+      Spectre_sawblade: -1520810090
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -6,12 +6,12 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AC_Irene
+  m_Name: AC_Spectre
   m_Controller: {fileID: 9100000, guid: 4526c5a1139823d4893e52102901a018, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: e250e5a21cd5b464eb05d520a52949f2, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 96e20e4174603b343b8c7b1d6aba8f63, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: 0eef78cfc0d68b8438d3de161792a201, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: e4b7f7b2c7ab0d34baebc52ee9e0089a, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: d1898cd714a0c9c4cb257cfc63b33a93, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: af6ad287ced1b8145ab77fb7840b6b52, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 592236b1992ff3b45b0abffd476d1794, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e250e5a21cd5b464eb05d520a52949f2, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4d625c41749dbff42a762b8e0a1821b3, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 0eef78cfc0d68b8438d3de161792a201, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a944cf95a5af387408a09cec9a9c4747, type: 2}

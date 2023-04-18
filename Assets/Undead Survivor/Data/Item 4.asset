@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebbc2368964e5584a8a27d2a14a45ce3, type: 3}
   m_Name: Item 4
   m_EditorClassIdentifier: 
-  itemType: 4
+  itemType: 5
   itemId: 4
   itemName: Drink
   itemDesc: "Give me a drink, Bartender.\n\uC0DD\uBA85\uB825 \uC804\uCCB4 \uD68C\uBCF5"

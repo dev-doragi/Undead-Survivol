@@ -17,7 +17,7 @@ MonoBehaviour:
   itemName: Irene's Pistol
   itemDesc: "Guns and Hire.\n\uB370\uBBF8\uC9C0 {0}% \uC99D\uAC00\n\uAD00\uD1B5\uB825
     {1}\uAC1C \uCD94\uAC00"
-  itemIcon: {fileID: -1462761642, guid: 34b0d460611d2554db8e543e12c95455, type: 3}
+  itemIcon: {fileID: 1323737050, guid: acf86c51d3ba72e4c8c957aac3fcb932, type: 3}
   baseDamage: 3
   baseCount: 0
   damages:
@@ -28,4 +28,4 @@ MonoBehaviour:
   - 1.9
   counts: 0100000001000000020000000300000004000000
   projectile: {fileID: 2430695309519262231, guid: c333a540b2283cc48b944d48d63e5a9b, type: 3}
-  hand: {fileID: -263873705, guid: 34b0d460611d2554db8e543e12c95455, type: 3}
+  hand: {fileID: -1462648673, guid: acf86c51d3ba72e4c8c957aac3fcb932, type: 3}

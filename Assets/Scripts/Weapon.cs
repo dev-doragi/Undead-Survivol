@@ -28,8 +28,9 @@ public class Weapon : MonoBehaviour
             case 0: // 회전 무기
             case 5:
             case 6:
-                transform.Rotate(Vector3.back * speed * Time.deltaTime);
-
+            case 7:
+            case 9:
+                transform.Rotate(Vector3.back * speed * Time.deltaTime); // 회전 시키는 로직
                 break;
             default: // 기본 총탄 무기
                 timer += Time.deltaTime;
@@ -47,7 +48,7 @@ public class Weapon : MonoBehaviour
         this.damage = damage * Character.Damage;
         this.count += count; // 관통 수
 
-        if (id == 0 || id == 5 || id == 6 || id == 7)
+        if (transform.tag == "Melee")
             Batch();
 
         player.BroadcastMessage("ApplyGear", SendMessageOptions.DontRequireReceiver);
@@ -75,19 +76,20 @@ public class Weapon : MonoBehaviour
             }
         }
 
-        switch (id)
+        switch (id) // 무기 기본정보 설정 하는 로직
         {
             case 0:
             case 5:
-            case 7:
                 speed = 150 * Character.WeaponSpeed;
+                transform.tag = "Melee";
                 Batch();
                 break;
             case 6:
-
+            case 7:
+            case 9:
                 speed = 300 * Character.WeaponSpeed;
+                transform.tag = "Melee";
                 Batch();
-
                 break;
             default:
                 speed = 0.4f * Character.WeaponRate; // 발사 속도

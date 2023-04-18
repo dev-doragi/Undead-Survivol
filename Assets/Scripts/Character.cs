@@ -6,17 +6,51 @@ public class Character : MonoBehaviour
 {
     public static float Speed
     {
-        get { return GameManager.instance.playerID == 0 ? 1.1f : 1f; }
+        get
+        {
+            // return GameManager.instance.playerID == 0 ? 1.1f : 1f;
+            switch (GameManager.instance.playerID)
+            {
+                case 0:
+                    return 1.1f;
+                case 4:
+                    return 1.08f;
+                default:
+                    return 1f;
+            } 
+        }
     }
 
     public static float WeaponSpeed
     {
-        get { return GameManager.instance.playerID == 1 ? 1.1f : 1f; }
+        get 
+        {
+            switch (GameManager.instance.playerID)
+            {
+                case 1:
+                    return 1.1f;
+                case 4:
+                    return 1.08f;
+                default:
+                    return 1f;
+            }
+        }
     }
 
     public static float WeaponRate
     {
-        get { return GameManager.instance.playerID == 1 ? 0.9f : 1f; }
+        get
+        {
+            switch (GameManager.instance.playerID)
+            {
+                case 1:
+                    return 0.9f;
+                case 4:
+                    return 0.92f;
+                default:
+                    return 1f;
+            }
+        }
     }
 
     public static float Damage

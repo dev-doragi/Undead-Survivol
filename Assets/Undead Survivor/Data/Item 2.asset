@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebbc2368964e5584a8a27d2a14a45ce3, type: 3}
   m_Name: Item 2
   m_EditorClassIdentifier: 
-  itemType: 2
+  itemType: 3
   itemId: 2
   itemName: Technical Glove
   itemDesc: "Nogada Glove.\n\uC5F0\uC0AC\uC18D\uB3C4 {0}% \uC99D\uAC00"

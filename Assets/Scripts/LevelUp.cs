@@ -39,31 +39,61 @@ public class LevelUp : MonoBehaviour
             item.gameObject.SetActive(false);
         }
         // 2. 랜덤 아이템 3개 활성화
-        int[] ran = new int[3];
-        while (true)
+        if (GameManager.instance.playerID != 5)
         {
-            ran[0] = Random.Range(0, items.Length);
-            ran[1] = Random.Range(0, items.Length);
-            ran[2] = Random.Range(0, items.Length);
-            if (ran[0]!=ran[1] && ran[1]!=ran[2] && ran[0]!=ran[2]) // 3가지 아이템이 겹치지 않을 때
-                break;
-        }
+            int[] ran = new int[3];
+            while (true)
+            {
+                ran[0] = Random.Range(0, items.Length);
+                ran[1] = Random.Range(0, items.Length);
+                ran[2] = Random.Range(0, items.Length);
+                if (ran[0] != ran[1] && ran[1] != ran[2] && ran[0] != ran[2]) // 3가지 아이템이 겹치지 않을 때
+                    break;
+            }
 
-        for (int i=0; i < ran.Length; i++)
+            for (int i = 0; i < ran.Length; i++)
+            {
+                Item ranItem = items[ran[i]];
+
+                // 3. 만렙이 될 경우 소비 아이템(힐)으로 대체
+                if (ranItem.level == ranItem.data.damages.Length)
+                {
+                    items[4].gameObject.SetActive(true);
+                    //items[Random.RandomRange(4, 7)].gameObject.SetActive(true);
+                }
+                else
+                {
+                    ranItem.gameObject.SetActive(true);
+                }
+            }
+        }
+        else
         {
-            Item ranItem = items[ran[i]];
-
-            // 3. 만렙이 될 경우 소비 아이템(힐)으로 대체
-            if (ranItem.level == ranItem.data.damages.Length)
+            int[] ran = new int[2];
+            int[] validNumbers = { 2, 3, 4, 9 }; // 무기 데이터 순서 수정하기 귀찮아서 그냥 인덱스로 배열 만듬 ㅋ
+            while (true)
             {
-                items[4].gameObject.SetActive(true);
-                //items[Random.RandomRange(4, 7)].gameObject.SetActive(true);
+                ran[0] = validNumbers[Random.Range(0, validNumbers.Length)];
+                ran[1] = validNumbers[Random.Range(0, validNumbers.Length)];
+                if (ran[0] != ran[1]) // 2가지 아이템이 겹치지 않을 때
+                    break;
             }
-            else
+
+            for (int i = 0; i < ran.Length; i++)
             {
-                ranItem.gameObject.SetActive(true);
+                Item ranItem = items[ran[i]];
+
+                // 3. 만렙이 될 경우 소비 아이템(힐)으로 대체
+                if (ranItem.level == ranItem.data.damages.Length)
+                {
+                    items[4].gameObject.SetActive(true);
+                    // items[Random.RandomRange(4, 7)].gameObject.SetActive(true);
+                }
+                else
+                {
+                    ranItem.gameObject.SetActive(true);
+                }
             }
         }
-
     }
 }

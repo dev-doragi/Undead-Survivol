@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9141751122772919171}
   - component: {fileID: 815217053045764438}
   m_Layer: 0
-  m_Name: Irene's Rapier
+  m_Name: Spectre's Sawblade
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 682511124, guid: acf86c51d3ba72e4c8c957aac3fcb932, type: 3}
+  m_Sprite: {fileID: -1520810090, guid: acf86c51d3ba72e4c8c957aac3fcb932, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,7 +103,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.3888889, y: 1.1666666}
+    oldSize: {x: 0.7777778, y: 0.7777778}
     newSize: {x: 0.3888889, y: 1.1666666}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

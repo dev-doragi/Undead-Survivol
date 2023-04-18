@@ -49,8 +49,13 @@ public class Gear : MonoBehaviour
             {
                 case 0:
                 case 5:
-                case 6:
+                case 7:
                     float speed = 150 * Character.WeaponSpeed;
+                    weapon.speed = speed + (speed * rate);
+                    break;
+                case 6:
+                case 9:
+                    speed = 300 * Character.WeaponSpeed;
                     weapon.speed = speed + (speed * rate);
                     break;
                 default:

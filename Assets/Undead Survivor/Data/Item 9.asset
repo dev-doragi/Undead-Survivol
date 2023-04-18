@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebbc2368964e5584a8a27d2a14a45ce3, type: 3}
+  m_Name: Item 9
+  m_EditorClassIdentifier: 
+  itemType: 2
+  itemId: 9
+  itemName: Saw
+  itemDesc: "\uC721\uCC38\uACE8\uB2E8\n\uB370\uBBF8\uC9C0 {0}% \uC99D\uAC00\n\uD68C\uC804\uCCB4
+    {1}\uAC1C \uCD94\uAC00"
+  itemIcon: {fileID: 2136279583, guid: acf86c51d3ba72e4c8c957aac3fcb932, type: 3}
+  baseDamage: 4
+  baseCount: 3
+  damages:
+  - 0.5
+  - 1
+  - 1.5
+  - 2
+  - 2.5
+  counts: 0100000000000000010000000000000001000000
+  projectile: {fileID: 7394169248969950908, guid: 4cf05e021acb2914ebe869ab5b60b928, type: 3}
+  hand: {fileID: 183785801, guid: acf86c51d3ba72e4c8c957aac3fcb932, type: 3}

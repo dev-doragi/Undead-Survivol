@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [Header("# Game Control")]
     public bool isLive; // 시간 정지 여부를 알려주는 bool 값
     public float gameTime;
-    public float maxGameTime = 2 * 10f;
+    public float maxGameTime = 6 * 10f;
     [Header("# Player Info")]
     public int playerID;
     public float health;
@@ -41,6 +41,9 @@ public class GameManager : MonoBehaviour
             case 4:
                 UILevelUP.Select(7);
                 break;
+            case 5:
+                UILevelUP.Select(9);
+                break;
             default:
                 UILevelUP.Select(playerID % 2);
                 break;
@@ -62,6 +65,7 @@ public class GameManager : MonoBehaviour
 
         uiResult.gameObject.SetActive(true); // 게임오버 ui 호출
         uiResult.Lose();
+        yield return new WaitForSeconds(5.5f);
         Stop();
     }
 

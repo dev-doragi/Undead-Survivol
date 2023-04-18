@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class Item : MonoBehaviour
 {
@@ -36,6 +37,7 @@ public class Item : MonoBehaviour
         {
             case ItemData.ItemType.Melee:
             case ItemData.ItemType.Range:
+            case ItemData.ItemType.Both_Melee:
                 textDesc.text = string.Format(data.itemDesc, data.damages[level] * 100, data.counts[level]);
                 break;
             case ItemData.ItemType.Glove:
@@ -54,7 +56,28 @@ public class Item : MonoBehaviour
         switch (data.itemType)
         {
             case ItemData.ItemType.Melee:
+                //if (level == 0) // 레벨이 0일 때, 무기를 처음 얻는 방식
+                //{
+                //    GameObject targetObject = GameObject.Find("Player");
+                //    targetObject.DeleteChildObjectsWithTag("Melee");
+                //    GameObject newWeapon = new GameObject();
+                //    weapon = newWeapon.AddComponent<Weapon>();
+                //    weapon.Init(data);
+                //}
+                //else // 레벨 업 시,
+                //{
+                //    float nextDamage = data.baseDamage;
+                //    int nextCount = 0;
+
+                //    nextDamage += data.baseDamage * data.damages[level];
+                //    nextCount += data.counts[level];
+
+                //    weapon.LevelUp(nextDamage, nextCount);
+                //}
+                //level++;
+                //break;
             case ItemData.ItemType.Range:
+            case ItemData.ItemType.Both_Melee:
                 if (level == 0) // 레벨이 0일 때, 무기를 처음 얻는 방식
                 {
                     GameObject newWeapon = new GameObject();
@@ -99,3 +122,17 @@ public class Item : MonoBehaviour
         }
     }
 }
+
+//public static class GameObjectExtensions
+//{
+//    public static void DeleteChildObjectsWithTag(this GameObject parent, string targetTag)
+//    {
+//        // 자식 오브젝트를 가져옴
+//        Transform[] children = parent.GetComponentsInChildren<Transform>();
+
+//        // 자식 오브젝트를 LINQ를 사용하여 태그를 비교하고, 일치하는 경우 삭제
+//        children.Where(child => child.CompareTag(targetTag))
+//                .ToList()
+//                .ForEach(child => Object.Destroy(child.gameObject));
+//    }
+//}
