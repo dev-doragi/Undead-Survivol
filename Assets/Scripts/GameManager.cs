@@ -50,6 +50,9 @@ public class GameManager : MonoBehaviour
 
         }
         Resume();
+
+        AudioManager.instance.PlayBgm(true);
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.Select);
     }
 
     public void GameOver()
@@ -65,6 +68,8 @@ public class GameManager : MonoBehaviour
 
         uiResult.gameObject.SetActive(true); // 게임오버 ui 호출
         uiResult.Lose();
+        AudioManager.instance.PlayBgm(false);
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.Lose);
         yield return new WaitForSeconds(5.5f);
         Stop();
     }
@@ -84,6 +89,9 @@ public class GameManager : MonoBehaviour
         uiResult.gameObject.SetActive(true); // 게임오버 ui 호출
         uiResult.Win();
         Stop();
+
+        AudioManager.instance.PlayBgm(false);
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.Win);
     }
 
     public void GameRestart()
